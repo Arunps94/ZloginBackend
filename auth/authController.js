@@ -22,7 +22,8 @@ router.post('/register', (req, res) => {
     var hashpassword = bcrypt.hashSync(req.body.password, 8);
     var email = req.body.email;
     User.find({ email: email }, (err, data) => {
-        if (data) {
+        if (data.length>0) {
+            //console.log(data)
             return res.status(500).send({auth:false,token:'Email Already Taken'})
         } else {
             User.create({
@@ -33,7 +34,7 @@ router.post('/register', (req, res) => {
                 role: req.body.role ? req.body.role : 'User'
             }, (err, data) => {
                 if (err) return res.status(500).send('Error While Register')
-                res.status(200).send("Register Successfull")
+                return  res.status(200).send({auth:true,token:"Registered Successfully Now you can login"})
             })
         }
     })

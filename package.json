@@ -1,11 +1,11 @@
 {
-  "name": "loginbackend",
+  "name": "zloginbackend",
   "version": "1.0.0",
   "description": "This is login register api",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "dev":"nodemon app.js"
+    "dev": "nodemon app.js"
   },
   "author": "APS",
   "license": "ISC",
@@ -16,5 +16,10 @@
     "express": "^4.17.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.5"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "no"
   }
 }
