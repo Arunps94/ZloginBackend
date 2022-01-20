@@ -9,6 +9,14 @@ const User = require('./userModal');
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json())
 
+//get first user
+router.get('/', (req, res) => {
+    
+        if (err) throw err;
+        res.send("login page");
+    
+})
+
 //get all users
 router.get('/users', (req, res) => {
     User.find({}, (err, data) => {
